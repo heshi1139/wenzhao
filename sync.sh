@@ -32,10 +32,10 @@ cat > $index_page << EOF
 <body>
 EOF
 
-for v in $(ls *.mp4); do
+for v in $(ls -t *.mp4); do
 	title=$(echo $v | cut -d'-' -f1)
 	name=$(echo $v | sed "s/'//g")
-	echo "<a href='http://$ip/wenzhao/$name'>$title</a></br>" >> $index_page
+	echo "<a href='http://$ip/wenzhao/$name'>$title</a></br></br>" >> $index_page
 	echo "##### <a href='http://$ip/wenzhao/$name'>$title</a>" >> $md_page
 done
 echo "</body></html>" >> $index_page
