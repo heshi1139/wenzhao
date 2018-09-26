@@ -12,7 +12,7 @@ index_page=$video_dir/index.html
 md_page=$video_dir/index.md
 youtube_url=https://www.youtube.com/playlist?list=PL2DywIam67jsFoEhIvVhB0HukSP8IAIt0
 
-ip=$(ifconfig | grep "inet addr" | sed -n 1p | cut -d':' -f2 | cut -d' ' -f1)
+ip=$(/sbin/ifconfig | grep "inet addr" | sed -n 1p | cut -d':' -f2 | cut -d' ' -f1)
 
 
 # download videos
