@@ -42,10 +42,14 @@ echo "</body></html>" >> $index_page
 
 
 # commit
+plinks="##### 反向代理： [Google](http://$ip:8888/search?q=425事件) - [维基百科](http://$ip:8100/wiki/喬高-麥塔斯調查報告) - [大纪元新闻网](http://$ip:10080) - [新唐人电视台](http://$ip:8000) - [希望之声](http://$ip:8200) - [神韵艺术团](http://$ip:8000/xtr/gb/prog673.html) - [我的博客](http://$ip:10000/)"
+vlinks="##### 精彩视频： [《时事小品》](https://github.com/gfw-breaker/ntdtv-comedy/blob/master/README.md) - [《传奇时代》](http://$ip:10000/videos/legend/) - [《风雨天地行》](http://$ip:10000/videos/fytdx/) - [《九评共产党》](http://$ip:10000/videos/jiuping/)"
 cd /root/wenzhao
 git pull
 sed -i '5,$d' README.md
 cat $md_page >> README.md
+sed -i "10 a$vlinks" README.md
+sed -i "10 a$plinks" README.md
 git commit -a -m 'ok'
 git push
 
